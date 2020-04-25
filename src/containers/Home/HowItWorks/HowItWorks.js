@@ -17,7 +17,7 @@ const howItWorks = (props) => (
                  imageMedium={BrowserM}
                  imageSmall={BrowserS}
                  mediaLarge="(min-width: 1200px)"
-                 mediaMedium="(min-width: 900px)"
+                 mediaMedium="(min-width: 800px)"
                  altText="screenshot of Parsley Engine"
                  className="center" />
     </SectionContainer>

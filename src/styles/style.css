@@ -1,3 +1,23 @@
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(./fonts/open-sans-v17-latin-regular.woff2) format('woff2'),
+    url(./fonts/open-sans-v17-latin-regular.woff) format('woff'),
+    url(./fonts/open-sans-v17-latin-regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url(./fonts/open-sans-v17-latin-700.woff2) format('woff2'),
+    url(./fonts/open-sans-v17-latin-700.woff) format('woff'),
+    url(./fonts/open-sans-v17-latin-700.ttf) format('truetype');
+}
+
+
 /* reset */
 
 /* Set core body defaults */
@@ -32,7 +52,6 @@ button{cursor:pointer;}
         scroll-behavior: auto !important;
     }
 }
-
 
 /* BASE STYLES */
 :root{--font:'Open Sans', sans-serif;
@@ -86,9 +105,9 @@ li{display:block;}
 abbr{text-decoration: none;}
 strong{font-weight:bold}
 
-h1{font-size:var(--s4);}
-h2{font-size:var(--s3);}
-h3{font-size:var(--s1)}
+h1{font-size:var(--s4);font-weight:normal}
+h2{font-size:var(--s3);font-weight:normal}
+h3{font-size:var(--s1);font-weight:normal}
 a{color:var(--color-primary);}
 
 
@@ -163,18 +182,36 @@ a{color:var(--color-primary);}
     flex-basis: 100%;
 }
 
-#header, #footer, #whos-using-it-container,#features-container{
-    box-sizing: content-box;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 75em;
-    padding-left: calc(1.2*var(--ratio));
-    padding-right: calc(1.2*var(--ratio));
+@media screen and (max-width: 40em) {
+    #header, #footer, #whos-using-it-container, #features-container,#main > section {
+        padding-left:calc(.75*var(--s0));
+        padding-right:calc(.75*var(--s0))
+    }
+}
+@media screen and (min-width: 40.0625em) {
+    #header, #footer, #whos-using-it-container, #features-container, #main > section {
+        padding-left:calc(1.5*var(--s0));
+        padding-right:calc(1.5*var(--s0))
+    }
+}
+@media screen and (min-width: 80em) {
+    #header, #footer, #whos-using-it-container, #features-container {
+        max-width: 75em;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left:0;
+        padding-right:0
+    }
 }
 
 .button-primary{background:var(--color-primary);color:var(--color-text-light);display:inline-block;font-size:var(--s0);padding:var(--s-3) var(--s3);border-radius:calc(.5*var(--s-5));text-decoration:none}
 .button-primary:hover{text-decoration:underline}
 .card-content{padding:0 var(--s0) calc(2*var(--s0));background:var(--color-background)}
+
+.next-actions li{
+    display:inline-block;
+}
+.next-actions li + li {padding-left:calc(2*var(--s0))}
 
 
 #overview h1{margin-top:var(--s3)}
@@ -185,9 +222,11 @@ a{color:var(--color-primary);}
 /* Header */
 #header-container,#main, #footer-container{width:100%;}
 #header-container{background:var(--color-background);color:var(--color-text);border-top:var(--s-2) solid var(--color-primary);}
-#header{position:relative;}
+#header{position:relative;padding-top:calc(1.5*var(--s0));padding-bottom:calc(1.5*var(--s0))}
 #navigation a{color:var(--color-text);}
 #footer-container{border-top:var(--s-5) solid var(--color-primary);}
+#footer{padding-top:calc(1*var(--s2));padding-bottom:calc(2*var(--s0));}
+
 
 #skip-to-main{position:absolute;left:-1000em;display:block;color:var(--color-text-light);}
 #skip-to-main:focus,#skip-to-main:active{top:0;left:0;right:0;background-color:var(--color-primary);z-index:1000;overflow:visible;text-align:center;width:auto;height:auto;font-size:var(--s1);}
@@ -216,7 +255,7 @@ a{color:var(--color-primary);}
 
 
 #how-it-works{border-bottom:calc(.25*var(--s-5)) solid var(--color-border);padding-bottom:var(--s5)}
-#how-it-works img{max-width:70em;}
+
 
 
 #the-team{background:#3575a1 url('images/bg-the-team.jpg') repeat-x center top;color:var(--color-text-light);padding:calc(2*var(--s0)) 0}
@@ -230,7 +269,7 @@ a{color:var(--color-primary);}
 #how-much-does-it-cost{background:#323745 url('images/bg-how-much-does-it-cost.jpg') repeat-x center top;color:var(--color-text-light);padding:calc(2*var(--s0)) 0}
 .cost-option{max-width:17.5em;background:var(--color-background);}
 .cost-option h3,.team h3{background:var(--color-primary);padding:var(--s-1) 0;}
-.cost-option ul{color:var(--color-text);padding:0 var(--s0) var(--s0)}
+.cost-option ul{color:var(--color-text);padding:0 0 var(--s0)}
 .cost-option li{padding-bottom:var(--s-3);}
 .cost-action{background:var(--color-background);}
 
@@ -265,8 +304,8 @@ a.link-button:hover,a.link-button:focus,.cost-action a:hover,.cost-action a:focu
     #menu-toggle,#logo{}
     #menu-toggle{padding:1.65em 4.5% 0;}
     #menu-svg{max-width:44px;}
-    #logo-container{padding-bottom:1.15em;}
-    #logo{padding:1.95em 9% .1em 0;text-align:center;}
+
+    .logo{padding-bottom:calc(2*var(--s0))}
 
     .header img{text-align:center;margin: 0 auto;}
 
@@ -278,12 +317,11 @@ a.link-button:hover,a.link-button:focus,.cost-action a:hover,.cost-action a:focu
     .actions-mobile{display:block;}
     .actions-online{display:none;}
 
-    #how-it-works img{max-width:320px;}
 
-    .cost-option,.feature{margin:0 auto;}
 
-    #footer{padding:1.8em 4.5% 1.3em;}
-    #footer li{padding:0;text-align:center;}
+    .cost-option,.feature{margin-left:auto;margin-right:auto;}
+
+
 
 
 
@@ -306,7 +344,7 @@ a.link-button:hover,a.link-button:focus,.cost-action a:hover,.cost-action a:focu
     #logo{}
     .next-actions{margin-left: auto;}
 
-    #footer{padding:calc(2*var(--s2)) 0 calc(2*var(--s0));display:flex;flex-direction:row;align-items:center;}
+    #footer{display:flex;flex-direction:row;align-items:center;}
     #footer-logo{}
     #footer-actions{}
 
@@ -336,7 +374,7 @@ a.link-button:hover,a.link-button:focus,.cost-action a:hover,.cost-action a:focu
     #menu-toggle, #logo{}
     #menu-toggle{padding-right:calc(2*var(--s0))}
     #menu-toggle svg{max-width:calc(2*var(--s0))}
-    #header{padding:var(--s0) 0 calc(.5*var(--s0))}
+
 
 
 
@@ -352,4 +390,14 @@ a.link-button:hover,a.link-button:focus,.cost-action a:hover,.cost-action a:focu
  #cost-option-container > div {justify-content: center}
 
 
+}
+@media screen and (max-width: 49.9375em) {
+    #how-it-works img {
+        max-width: 20em;
+    }
+}
+@media screen and (min-width: 50em) {
+    #how-it-works img {
+        max-width: 70em;
+    }
 }
