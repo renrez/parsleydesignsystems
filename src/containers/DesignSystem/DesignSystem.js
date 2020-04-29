@@ -1,11 +1,11 @@
 import React from 'react';
 import '../../styles/design-system.css';
-import Container from '../../hoc/Container/Container';
+import IdContainer from '../../hoc/IdContainer/IdContainer';
 import SectionContainer from "../../hoc/SectionContainer/SectionContainer";
 
 
 const designSystem = () => (
-    <Container>
+    <IdContainer id="ds-container">
         <SectionContainer id="ds-overview" className="stack">
             <h1 className="center">The design system of Parsley Design Systems</h1>
             <p className="center">We eat our own dog food, everything Parsley Design Systems creates is done so with our design system product and applies an end to end design system led approach.</p>
@@ -63,7 +63,7 @@ const designSystem = () => (
                 <a href="#link-path" className="button-primary">Link text</a>
             </div>
         </SectionContainer>
-    </Container>
+    </IdContainer>
 );
 
 export default designSystem;
