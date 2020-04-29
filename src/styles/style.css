@@ -23,6 +23,7 @@
 /* Set core body defaults */
 body {
     min-height: 100vh;
+    min-height:-webkit-fill-available;
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
 }
@@ -59,12 +60,12 @@ button{cursor:pointer;}
     --color-text-light:#fff;
     --color-background:#fff;
     --color-background-light:#3575a1;
-    --color-background-dark:#265e85;
     --color-background-darker:#323745;
     --color-background-darkest:#242b39;
     --color-primary:#3686be;
     --color-secondary:#265e85;
     --color-border:#d0d0d0;
+    --color-border-dark:#757575;
     --ratio:1.25;
     --s-5:calc(var(--s0)/var(--ratio)/var(--ratio)/var(--ratio)/var(--ratio)/var(--ratio));
     --s-4:calc(var(--s0)/var(--ratio)/var(--ratio)/var(--ratio)/var(--ratio));
@@ -77,6 +78,7 @@ button{cursor:pointer;}
     --s3:calc(var(--s0)*var(--ratio)*var(--ratio)*var(--ratio));
     --s4:calc(var(--s0)*var(--ratio)*var(--ratio)*var(--ratio)*var(--ratio));
     --s5:calc(var(--s0)*var(--ratio)*var(--ratio)*var(--ratio)*var(--ratio)*var(--ratio));
+    --border-size-thin:calc(.25*var(--s-5));
     --measure:65ch;
     --measure-long:90ch;
     --line-height:calc(1.2*var(--ratio));
@@ -87,7 +89,8 @@ button{cursor:pointer;}
     font-family:var(--font);
 
     background-color:var(--color-background);
-    color:var(--color-text)}
+    color:var(--color-text)
+}
 *,:after,:before{box-sizing:border-box;
     font-family:inherit;
     color:inherit;
@@ -254,7 +257,7 @@ a{color:var(--color-primary);}
 
 #features{background:var(--color-background);color:var(--color-text);}
 #features img{max-width:17.3125em;margin:0 auto;}
-#how-it-works{border-bottom:calc(.25*var(--s-5)) solid var(--color-border);padding-bottom:var(--s5)}
+#how-it-works{border-bottom:var(--border-size-thin) solid var(--color-border);padding-bottom:var(--s5)}
 
 
 
@@ -264,6 +267,7 @@ a{color:var(--color-primary);}
 .team p{color:var(--color-text);}
 #team-container > div {
     justify-content: space-evenly;
+    -ms-flex-pack: space-evenly;
 }
 
 #how-much-does-it-cost{background:var(--color-background-darker) url('images/bg-how-much-does-it-cost.jpg') repeat-x center top;color:var(--color-text-light);padding:calc(2*var(--s0)) 0}

@@ -1,0 +1,65 @@
+#main {
+    padding-top:calc(5*var(--s0));
+    padding-bottom:calc(10*var(--s0));
+}
+
+#main > .stack {
+    padding-bottom:calc(2.5*var(--s5));
+    border-bottom: var(--border-size-thin) solid var(--color-border);
+}
+
+.box-background {
+    background-color: var(--color-border);
+}
+
+.boxed {
+    border: var(--s-3) solid var(--color-text);
+    background-color: var(--color-background);
+    padding: var(--s-3);
+}
+
+
+
+.m-5 {
+    margin: var(--s-5);
+}
+
+.m-4 {
+    margin: var(--s-4);
+}
+
+.m-3 {
+    margin: var(--s-3);
+}
+
+.m-2 {
+    margin: var(--s-2);
+}
+
+.m-1 {
+    margin: var(--s-1);
+}
+
+.m0 {
+    margin: var(--s0);
+}
+
+.m1 {
+    margin: var(--s1);
+}
+
+.m2 {
+    margin: var(--s2);
+}
+
+.m3 {
+    margin: var(--s3);
+}
+
+.m4 {
+    margin: var(--s4);
+}
+
+.m5 {
+    margin: var(--s5);
+}
